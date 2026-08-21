@@ -22,7 +22,7 @@ function loadSkill(name) {
     return item ? [[item[1], item[2]]] : []
   }))
   if (!metadata.name || !metadata.description) throw new Error(`dsh-superpowers-zh: ${name}/SKILL.md requires name and description`)
-  return { name: metadata.name, description: metadata.description, content: match[2], resourceBase: { kind: 'directory', path: directory } }
+  return { name: metadata.name, description: metadata.description, source: 'runtime', content: match[2], resourceBase: { kind: 'directory', path: directory } }
 }
 
 export function apply(ctx) {
